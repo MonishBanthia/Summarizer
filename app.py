@@ -21,7 +21,7 @@ def Summarize():
         data = req.form["data"]
 
         minl = 20
-        maxl = 50
+        maxL = int(req.form["maxL"])
 
         def query(payload):
             response = requests.post(API_URL, headers=headers, json=payload)
@@ -31,8 +31,8 @@ def Summarize():
 
         output = query({
             "inputs": data,
-            "parameters": {"min_length": minl, "max_length": maxl},
-        })
+            "parameters": {"min_length": minl, "max_length": maxL},
+        })[0]
 
         return render_template("index.html", result=output["summary_text"])
 
