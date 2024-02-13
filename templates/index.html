@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXT SUMMARIZER</title>
+</head>
+<body>
+    <!-- we are using jinja which creates a gate/connection for python code and html code -->
+    <form action="{{url_for('Summarize')}}" method="post">
+        <textarea name="data" placeholder="Enter the Text" cols="30" rows="10" required="required"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <h3>Summarized Text:</h3>
+    <textarea name="result"  cols="30" rows="10">{{result}}</textarea>
+</body>
+</html>
