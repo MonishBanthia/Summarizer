@@ -14,7 +14,7 @@ def Index():
 @app.route("/Summarize", methods=["GET", "POST"])
 def Summarize():
     if req.method=="POST":
-        api_key = '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'
+        api_key = EnterAPIKEY
         API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
         headers = {"Authorization": f"Bearer {api_key}"}
 
